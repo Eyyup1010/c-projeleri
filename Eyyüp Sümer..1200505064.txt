@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+
+int main() {
+	
+	
+	
+	
+	int dizi[12]={30,25,22,98,17,47,3,55,126,10,49,11};
+	int secim;
+	int b,d,a,l,i,m;
+	bas:
+	
+	printf("\nNe yapmak istersiniz:\n ");
+	printf("Dizide girdiginiz sayiya kalansiz bolunen butun elemanlari gosteren islem icin : 1\n");
+	printf("Kucukten buyuge siralanmis elemanlardan istediginizi gormek icin : 2\n");
+	
+	scanf("%d",&secim);
+	    if(secim==1)
+	{
+		
+	printf("Hangi sayinin kalansiz bolunenlerini gormek istersin: ");
+	scanf("%d",&m);
+	
+	for(i=0;i<11;i++)
+    {
+	if(dizi[i]%m==0)
+	{
+		printf("%d\n",dizi[i]);
+		
+	}
+    }
+    	goto bas;
+	}
+	
+        else if(secim==2)
+	{
+	ilk:
+	printf("Kucukten buyuge siralanmis kacinci elemani gormek istersin:");
+	scanf("%d",&l);
+		
+		for(a=0;a<11;a++)
+		  {
+          for(b=0;b<11;b++)
+		  {
+          if(dizi[b] > dizi[b+1])
+		     {
+             d = dizi[b];
+             dizi[b] = dizi[b+1];
+             dizi[b+1] = d;
+             }
+		
+	      }
+}
+	if(l>0 && l<13){
+	printf("gormek istediginiz dizi elemani : %d ",dizi[l-1]);
+	goto bas;		
+	}
+	else{
+		printf("yanlis deger girdiniz\n");
+	goto ilk;	
+	}
+}
+    else{
+    	printf("Gecersiz bir islem girdiniz.\n");
+        printf("Lutfen tekrar secim yapiniz.\n");
+goto bas;
+    	
+	}                                                      
+
+
+	return 0;
+}
